@@ -7,17 +7,17 @@ if (!isset($_SESSION['user_id'])) {
 }
 
 if ($_SESSION['role'] === 'customer') {
-    header("Location: customer.php");
+    header("Location: home.php");
     exit();
 }
 
 if ($_SESSION['role'] === 'staff') {
-    header("Location: staff.php");
+    header("Location: staff/dashboard.php");
     exit();
 }
 
 if ($_SESSION['role'] === 'admin') {
-    header("Location: admin.php");
+    header("Location: admin/dashboard.php");
     exit();
 }
 ?>

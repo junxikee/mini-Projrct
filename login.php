@@ -1,4 +1,15 @@
+<?php
+session_start();
 
+$email = $_POST['email'];
+$password = $_POST['password'];
+
+$_SESSION['user_id'] = $user['id'];
+$_SESSION['role'] = $user['role'];
+
+header("Location: index.php");
+exit();
+?>
 <!DOCTYPE html>
 <html>
 <head>

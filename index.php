@@ -1,4 +1,26 @@
+<?php
+session_start();
 
+if (!isset($_SESSION['user_id'])) {
+    header("Location: login.php");
+    exit();
+}
+
+if ($_SESSION['role'] === 'customer') {
+    header("Location: customer.php");
+    exit();
+}
+
+if ($_SESSION['role'] === 'staff') {
+    header("Location: staff.php");
+    exit();
+}
+
+if ($_SESSION['role'] === 'admin') {
+    header("Location: admin.php");
+    exit();
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,7 +40,7 @@
     <p class="eyebrow">PRIVATE COLLECTION</p>
     <h1>Welcome back.</h1>
     <p class="muted">Sign in to enter the JX Hypercar showroom.</p>
-    <form action="login_process.php" method="POST">
+    <form action="login.php" method="POST">
         <label>Email</label>
         <input type="email" name="email" placeholder="you@example.com" required>
         <label>Password</label>
